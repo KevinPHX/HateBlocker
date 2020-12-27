@@ -30,19 +30,7 @@ def analyzeText():
 
     # GET request
     else:
-        client = language.LanguageServiceClient()
-        type_ = language.Document.Type.PLAIN_TEXT
-        language = "en"
-        document = {"content": text_content, "type_": type_, "language": language}
-        encoding_type = language.EncodingType.UTF8
-        response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
-        print(response)
-        if response.document_sentiment.score > 0.25:
-            return False
-        elif response.document_sentiment.score < -0.25:
-            return True
-        else:
-            return False
+        print("Hello world")
 @app.route('/')
 def test_page():
     # look inside `templates` and serve `index.html`
